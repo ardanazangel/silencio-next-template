@@ -11,6 +11,7 @@
   gap: var(--gap);
   padding: 0 var(--margin);
   pointer-events: none;
+  z-index: 9999;
 }
 
 .grid-item {
