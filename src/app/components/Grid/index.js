@@ -4,7 +4,7 @@ import "./grid.css";
 import { useEffect, useState } from "react";
 
 export default function grid() {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleKeyPress = (event) => {
@@ -15,13 +15,15 @@ export default function grid() {
 
     document.addEventListener("keydown", handleKeyPress);
 
+    console.log("Shift + W > Grid mode ✌(-‿-)✌");
+
     return () => {
       document.removeEventListener("keydown", handleKeyPress);
     };
   }, []);
 
   return (
-    <div id="grid" style={{ display: isVisible ? "none" : "flex" }}>
+    <div id="grid" style={{ display: isVisible ? "flex" : "none" }}>
       <div className="grid-item"></div>
       <div className="grid-item"></div>
       <div className="grid-item"></div>
